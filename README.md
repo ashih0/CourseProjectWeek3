@@ -41,33 +41,65 @@ This repository contains:
 
 ## How The Script Works
 
+### 1. Combining Files
 The script basically combines 7 files:
 
-1. 'UCI HAR Dataset/features.txt'
-1. 'UCI HAR Dataset/train/subject_train.txt'
-1. 'UCI HAR Dataset/train/X_train.txt'
-1. 'UCI HAR Dataset/train/y_train.txt'
-1. 'UCI HAR Dataset/test/subject_test.txt'
-1. 'UCI HAR Dataset/test/X_test.txt'
-1. 'UCI HAR Dataset/test/y_test.txt'
+1. `'UCI HAR Dataset/features.txt'`
+1. `'UCI HAR Dataset/train/subject_train.txt'`
+1. `'UCI HAR Dataset/train/X_train.txt'`
+1. `'UCI HAR Dataset/train/y_train.txt'`
+1. `'UCI HAR Dataset/test/subject_test.txt'`
+1. `'UCI HAR Dataset/test/X_test.txt'`
+1. `'UCI HAR Dataset/test/y_test.txt'`
 
 Graphically, it could be visualized as:
 
 <table>
   <tr>
-    <td></td>
-    <td></td>
-    <td>features.txt</td>
+    <td>-</td>
+    <td>-</td>
+    <td><tt>features.txt</tt></td>
   </tr>
   <tr>
-    <td>subject_train.txt</td>
-    <td>y_train.txt</td>
-    <td>X_train.txt</td>
+    <td><tt>subject_train.txt</tt></td>
+    <td><tt>y_train.txt</tt></td>
+    <td><tt>X_train.txt</tt></td>
   </tr>
   <tr>
-    <td>subject_test.txt</td>
-    <td>y_test.txt</td>
-    <td>X_test.txt</td>
+    <td><tt>subject_test.txt</tt></td>
+    <td><tt>y_test.txt</tt></td>
+    <td><tt>X_test.txt</tt></td>
   </tr>
 </table>
+
+### 2. Extracting Columns
+
+The assingment asks that the script:
+
+    "Extracts only the measurements on the mean and standard deviation for each measurement."
+
+I interpreted this to mean that only variables that were originally had labels ending with `-mean()` or `-std()` were to be retained.
+
+### 3. Descriptive Activity Names
+
+In the `y_train.txt` and `y_test.txt` files, the activity is coded as a number.
+
+These were translated to English equivalents based on the mapping supplied in:
+
+    `UCI HAR Dataset/activity_labels.txt`
+
+### 4. Descriptive variable names.
+
+The variable names were expanded based on the descriptions in:
+
+    `UCI HAR Dataset/features_info.txt`
+
+Full mapping is included in [CodeBook.md](/CodeBook.md/).
+
+### 5. Average of each variable for each activity and each subject.
+
+This requirement is assumed to be a summarization / smoothing of the
+data over multiple trials.  Therefore variables for the same subject /
+activity were treated as a group and the mean over each variable was
+taken.
 
