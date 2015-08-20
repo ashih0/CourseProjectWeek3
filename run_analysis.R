@@ -1,6 +1,5 @@
-## For means of columns, try:
-## http://stackoverflow.com/questions/11007813/r-row-means-on-multiple-columns-by-groups-or-unique-ids
-
+## Summarizes data from:
+##  http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 ## install.packages(data.table)
 library(data.table)
 
@@ -151,9 +150,11 @@ subjectData <- loadSubjectData()
 
 allData <- cbind(subjectData,activityData,accelerometerData)
 
+## Means of columns over Subject/Activity based on:
+## http://stackoverflow.com/questions/11007813/r-row-means-on-multiple-columns-by-groups-or-unique-ids
 allDataTable <- as.data.table(allData)
 summarizedData <- allDataTable[, lapply(.SD,mean), by="Subject,Activity"]
 
 write.table(nameMapping,"nameMapping.txt",row.name=FALSE)
-write.table(allData,"allData.txt",row.name=FALSE)
-write.table(summarizedData,"summarizedData.txt",row.name=FALSE)
+write.table(allData,"data_unsummarized.txt",row.name=FALSE)
+write.table(summarizedData,"data_summarized.txt",row.name=FALSE)
