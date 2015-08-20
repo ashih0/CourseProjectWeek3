@@ -14,7 +14,7 @@ Samsung Galaxy S smartphone.
 
 This repository contains:
 
-1. /summaryData.txt/
+1. [summaryData.txt]/summaryData.txt/
 
     This has the the means over the sample data for a given user-activity
     combination.
@@ -23,12 +23,12 @@ This repository contains:
 
     That data is a cache of: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
-2. /run_analysis.R/
+2. [run_analysis.R]/run_analysis.R/
 
     This R script processed the data set collected from Samsung Galaxy S
     smartphones that were on subjects performing various activities.
 
-3. /CodeBook.md/
+3. [CodeBook.md]/CodeBook.md/
 
     This code book describes the variable names in summaryData.txt and
     now they relate to the raw data.
