@@ -78,7 +78,8 @@ The assingment asks that the script:
 
     "Extracts only the measurements on the mean and standard deviation for each measurement."
 
-I interpreted this to mean that only variables that were originally had labels ending with `-mean()` or `-std()` were to be retained.
+I interpreted this to mean that only variables that originally had
+labels ending with `-mean()` or `-std()` were to be retained.
 
 ### 3. Descriptive Activity Names
 
@@ -86,13 +87,13 @@ In the `y_train.txt` and `y_test.txt` files, the activity is coded as a number.
 
 These were translated to English equivalents based on the mapping supplied in:
 
-    `UCI HAR Dataset/activity_labels.txt`
+    `'UCI HAR Dataset/activity_labels.txt'`
 
 ### 4. Descriptive variable names.
 
 The variable names were expanded based on the descriptions in:
 
-    `UCI HAR Dataset/features_info.txt`
+    `'UCI HAR Dataset/features_info.txt'`
 
 Full mapping is included in [CodeBook.md](/CodeBook.md/).
 
