@@ -29,10 +29,10 @@ There are two main measurement types as described in `'UCI HAR Dataset/README.tx
 
 * Linear Acceleration
 
-    Variables with "LinearAcceleration" in their name are taken from
+    Variables with `LinearAcceleration` in their name are taken from
     the Samsung Galaxy S II using its embedded accelerometer.  Linear
     acceleration for 3 axes were captured at a rate of 50 Hz and are
-    indicated by "X", "Y", or "Z" in the variable name.
+    indicated by `X`, `Y`, or `Z` in the variable name.
 
     This measurement is in standard gravity units "g".  To interpret
     this as physical units, multiply the value of the variable by 9.8
@@ -42,7 +42,7 @@ There are two main measurement types as described in `'UCI HAR Dataset/README.tx
 
 * Angular Velocity
 
-    Variables with "AngularVelocity" in their name are taken from
+    Variables with `AngularVelocity` in their name are taken from
     Samsung Galaxy S II using its embedded gyroscope.  Angular
     velocity for 3 axes were captured at a rate of 50 Hz.
 
@@ -67,8 +67,8 @@ The distinction between "Gravity" and "Body" signals is described in
 Body and Gravity acceleration signals were separated using another low
 pass Butterworth filter with a corner frequency of 0.3 Hz.
 
-This is indicated in the variable names containing "Body" and
-"Gravity", respectively.
+This is indicated in the variable names containing `Body` and
+`Gravity`, respectively.
 
 
 ## Sliding Windows
@@ -82,11 +82,11 @@ readings/window) were used.
 
 * Mean
 
-   Mean of the measurement in the sliding window indicated by "Mean"
+   Mean of the measurement in the sliding window indicated by `Mean`
    in the variable name.
 
     In the original dataset, these values were indicated by including
-    "-mean()" in the name.
+    `-mean()` in the name.
 
 * Standard Deviation
 
@@ -94,7 +94,7 @@ readings/window) were used.
     indicated by "StandardDeviation" in the variable name.
 
     In the original dataset, these values were indicated by including
-    "-std()" in the name.
+    `-std()` in the name.
 
 
 ## Processing
@@ -104,38 +104,41 @@ Processing applied to the "raw" data is described in `'UCI HAR Dataset/features_
 * Magnitude
 
     "Magnitude" in the name indicates that is a euclidian norm over the
-    corresponding "X", "Y", and "Z" measurements.
+    corresponding `X`, `Y`, and `Z` measurements.
 
     In the original dataset, these variables were indicated by including
-    "Mag" in the name.
+    `Mag` in the name.
 
 
 * Derivative
 
-    Variables with "Derivative" in the name were derived based in time
+    Variables with `Derivative` in the name were derived based in time
     based on the 50 Hz sampling frequency.
 
-    These are available for both LinearAcceleration and AngularVelocity
+    These are available for both `LinearAcceleration` and `AngularVelocity`
     variables.
 
     In the original dataset, these variables were indicated by including
-    "Jerk" in the name.
+    `Jerk` in the name.
 
 
 ## Time and Frequency Domain
 
 * TimeDomain
 
-    Variable names beginning with "TimeDomain" are the original
+    Variable names beginning with `TimeDomain` are the original
     measurements taken at 50 Hz.
 
     In the original dataset, these variables were indicated by beginning
-    with a lower case "t" in the name.
+    with a lower case `t` in the name.
 
 * FrequencyDomain
 
     A Fast Fourier Transform (FFT) was applied to some of the signals.
 
+    Variable names beginning with `FrequencyDomain` are passed through
+    from the original data set.
+
     In the original dataset, these variables were indicated by beginning
-    with a lower case "f" in the name.
+    with a lower case `f` in the name.
 
