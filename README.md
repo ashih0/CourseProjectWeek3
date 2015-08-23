@@ -42,7 +42,7 @@ This repository contains:
 ## How The Script Works
 
 ### 1. Combining Files
-The script basically combines 7 files:
+The script combines 7 files into a single tidy dataset:
 
 1. `'UCI HAR Dataset/features.txt'`
 1. `'UCI HAR Dataset/train/subject_train.txt'`
@@ -54,23 +54,33 @@ The script basically combines 7 files:
 
 Graphically, it could be visualized as:
 
-<table>
-  <tr>
-    <td>-</td>
-    <td>-</td>
-    <td><tt>features.txt</tt></td>
-  </tr>
-  <tr>
-    <td><tt>subject_train.txt</tt></td>
-    <td><tt>y_train.txt</tt></td>
-    <td><tt>X_train.txt</tt></td>
-  </tr>
-  <tr>
-    <td><tt>subject_test.txt</tt></td>
-    <td><tt>y_test.txt</tt></td>
-    <td><tt>X_test.txt</tt></td>
-  </tr>
-</table>
+<pre>
+|----------------------+----------------+-----------------|
+| -                    | -              | features.txt(3) |
+|----------------------+----------------+-----------------|
+| subject_train.txt(4) | y_train.txt(2) | X_train.txt(1)  |
+|----------------------+----------------+-----------------|
+| subject_test.txt(4)  | y_test.txt (2) | X_test.txt(1)   |
+|----------------------+----------------+-----------------|
+</pre>
+The processing was implemented in this order to more clearly
+map to the assignment.
+
+In practice, I'd lean towards processing two separate tidy data sets
+for "training" and "test" and then rbind(...) the two data frames
+together:
+<pre>
+|----------------------+----------------+-----------------|
+| -                    | -              | features.txt(1) |
+|----------------------+----------------+-----------------|
+| subject_train.txt(3) | y_train.txt(2) | X_train.txt(1)  |
+|----------------------+----------------+-----------------|
+| -                    | -              | features.txt(4) |
+|----------------------+----------------+-----------------|
+| subject_test.txt(6)  | y_test.txt (5) | X_test.txt(4)   |
+|----------------------+----------------+-----------------|
+</pre>
+
 
 ### 2. Extracting Columns
 
